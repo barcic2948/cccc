@@ -44,7 +44,7 @@ class C_CONT {
         void re_size();
         void print_cont();
         void print_avi();
-        void rent_C();
+        void rent_c();
         ~C_CONT();
 
 };

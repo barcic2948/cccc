@@ -10,11 +10,13 @@ int U_CONT::import_u(std::string filename) {
         std::cout << "File openend\n";
         while (std::getline(file, line))
         {
-            ++U_CONT::tsize;
-            if (U_CONT::tsize == U_CONT::size) {
-                U_CONT::re_size();
+            if(line.size() > 3) {
+                ++U_CONT::tsize;
+                if (U_CONT::tsize == U_CONT::size) {
+                    U_CONT::re_size();
+                }
+                U_CONT::arr[U_CONT::tsize - 1].ImportUser(line);
             }
-            U_CONT::arr[U_CONT::tsize - 1].ImportUser(line);
         }
         if(U_CONT::tsize == 0) {
             U_CONT::arr[0].CreateAdmin();

@@ -10,11 +10,13 @@ int C_CONT::import_c(std::string filename) {
         std::cout << "File openend\n";
         while (std::getline(file, line))
         {
-            ++C_CONT::tsize;
-            if (C_CONT::tsize == C_CONT::size) {
-                C_CONT::re_size();
+            if (line.size() > 4) {
+               ++C_CONT::tsize;
+                if (C_CONT::tsize == C_CONT::size) {
+                    C_CONT::re_size();
+                }
+                C_CONT::arr[C_CONT::tsize - 1].ImportCar(line); 
             }
-            C_CONT::arr[C_CONT::tsize - 1].ImportCar(line);
         }
     }
     else {
@@ -68,6 +70,10 @@ void C_CONT::add_car() {
     }
     C_CONT::arr[C_CONT::tsize].CreateCar(name, C_CONT::tsize);
     C_CONT::tsize++;
+}
+
+void C_CONT::rent_c() {
+    
 }
 
 void C_CONT::save_file() {
